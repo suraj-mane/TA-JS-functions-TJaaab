@@ -11,11 +11,13 @@ minToSec(2) ➞ 120
 */
 
 // - Write a Function Decleration for above problem
-function minToSec() {
-  // Your code
+function minToSec(min) {
+  let time = 0;
+  time = min * 60;
+  return time;
 }
 // - Execute the function with required parameter
-
+console.log(minToSec(50));
 /* 2. 
 Create a function named isInRange which validates whether a number n is exclusively within the bounds of lower and upper.
 Return true and false based on that.
@@ -26,11 +28,15 @@ isInRange(1, 10, 19); // false
 */
 
 // - Write a Function Decleration for above problem
-function isInRange() {
-  // Your code
+function isInRange(a,b,c) {
+  if(a < b && b > c){
+    return "true";
+  } else {
+    return "false";
+  }
 }
 // - Execute the function with required parameter
-
+isInRange(1,10,8);
 /* 2. calculateBMI
 
 
@@ -49,9 +55,22 @@ Obese: BMI is 30 or more
 
 */
 
-function calculateBMI() {
-  // Your code
+function calculateBMI(weight, height) {
+  bmi = weight * 10 / (height * height);
+  switch(true){
+    case bmi < 18.5:
+      return "Underweight";
+    case bmi >= 18.5 && bmi < 24.9:
+      return "Normal weight";
+    case bmi >= 25 && bmi < 29.9:
+      return "Overweight";
+    case bmi > 30:
+      return "Obese";
+    default:
+      return "Enter valid Input";
+  }
 }
+console.log(calculateBMI(0, 6));
 
 /* 3. appropiateDrinks
 
@@ -64,10 +83,25 @@ Create a function that take the age are return the appropiate drink based on the
 
 */
 
-function appropiateDrinks() {
-  // Your code
+function appropiateDrinks(age) {
+  if(age > 0){
+    switch(true){
+      case age <= 14:
+        return "drink fruit juice";
+      case age <= 18:
+        return "drink soda";
+      case age <= 21:
+        return "drink fruit-flavored beer";
+      case age > 21:
+        return "drink throat-piercing vodka";
+      default:
+        return "age is not match";
+    }
+  }else {
+    return "Enter vaild input";
+  }
 }
-
+console.log(appropiateDrinks(-1));
 /* 4. Add two numers or string
 
 Write a function that accepts two numbers or string and returns the sum of the numbers and concatenation of the strings.
@@ -79,12 +113,16 @@ Twist is when user passes anything other than number, or string value you should
 
 */
 
-function sum() {
-  // Your code
+function sum(numA, numB) {
+  if(numA === string && numB === string){
+    return numA + numB;
+  } else {
+    return "Enter vaild input"; 
+  }
 }
 
 // Function Test
-sum(2, 4); // 4
+console.log(sum(2,2)); // 4
 sum('Arya', 'Stark'); // "Arya Stark"
 sum('Arya', 2); // Enter valid Values
 sum(null, 2); // Enter valid Values
