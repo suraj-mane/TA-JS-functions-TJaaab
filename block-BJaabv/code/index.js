@@ -9,7 +9,7 @@
 */
 
 function calculateDogAge() {
-  // Your code goes here
+  
 }
 
 /*
@@ -51,10 +51,9 @@ function celsiusToFahrenheit() {
   * [ ] If the value of n is below 0 return "The number below 1 is not allowed"
 */
 
-function pow() {
-  // Your code goes here
+function pow(a, b) {
+  
 }
-
 // Test
 pow(3, 2); // 9
 pow(3, 3); // 27
